@@ -14,7 +14,7 @@ const HeartCarePatientPlanner = () => {
     const fetchPatients = async () => {
       try {
         setLoading(true);
-        const res = await fetch('http://localhost:3333/data');
+        const res = await fetch('http://localhost:4000/data');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (mounted) setPatients(Array.isArray(data) ? data : []);

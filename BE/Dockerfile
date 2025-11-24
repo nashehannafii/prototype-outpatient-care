@@ -13,6 +13,6 @@ RUN npm ci --only=production
 COPY BE/server.js ./
 COPY DATA ./DATA
 
-EXPOSE 3333
+EXPOSE 4000
 
 CMD ["node", "server.js"]
