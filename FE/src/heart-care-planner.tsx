@@ -3,7 +3,7 @@ import { Heart, User, Calendar, Activity, AlertCircle, FileText, Clock, Trending
 
 const HeartCarePatientPlanner = () => {
   const [selectedPatient, setSelectedPatient] = useState(null);
-  const [activeMenu, setActiveMenu] = useState('Dashboard');
+  const [activeMenu, setActiveMenu] = useState('Outpatient Care');
 
   const [patients, setPatients] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -278,16 +278,15 @@ const HeartCarePatientPlanner = () => {
           </div>
         </header>
 
-        
+
         <nav className="mb-6">
           <ul className="flex gap-3">
-            {['Dashboard', 'Outpatient Care', 'Other Menus'].map((item, idx) => (
+            {['Outpatient Care', 'Other Menus'].map((item, idx) => (
               <li key={`${item}-${idx}`}>
                 <button
                   onClick={() => setActiveMenu(item)}
-                  className={`px-3 py-2 watch:px-2 watch:py-1 rounded-md font-medium transition-colors ${
-                    activeMenu === item ? 'bg-blue-600 text-white' : 'text-gray-700 hover:bg-gray-100'
-                  }`}
+                  className={`px-3 py-2 watch:px-2 watch:py-1 rounded-md font-medium transition-colors ${activeMenu === item ? 'bg-blue-600 text-white' : 'text-gray-700 hover:bg-gray-100'
+                    }`}
                 >
                   {item}
                 </button>
@@ -301,40 +300,40 @@ const HeartCarePatientPlanner = () => {
             <p className="text-gray-400">Empty menu</p>
           </div>
         ) : (
-        <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-          {!selectedPatient ? (
-            <div className="p-4 md:p-6">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h2 className="text-lg md:text-2xl font-bold text-gray-900">Active Patients</h2>
-                  <p className="text-gray-600 text-sm">Total: {patients.length} patients in care</p>
+          <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+            {!selectedPatient ? (
+              <div className="p-4 md:p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-lg md:text-2xl font-bold text-gray-900">Active Patients</h2>
+                    <p className="text-gray-600 text-sm">Total: {patients.length} patients in care</p>
+                  </div>
+                  <div className="flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-lg">
+                    <Clock className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                    <span className="text-xs md:text-sm font-medium text-blue-900">Last Updated: {new Date().toLocaleDateString('en-US')}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-lg">
-                  <Clock className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
-                  <span className="text-xs md:text-sm font-medium text-blue-900">Last Updated: {new Date().toLocaleDateString('en-US')}</span>
-                </div>
-              </div>
 
-              <div className="flex flex-col gap-3">
-                {loading ? (
-                  <div className="p-8 text-center text-gray-600">Loading patients...</div>
-                ) : error ? (
-                  <div className="p-8 text-center text-red-600">Failed to load data: {error}</div>
-                ) : patients.length === 0 ? (
-                  <div className="p-8 text-center text-gray-600">No patients.</div>
-                ) : (
-                  patients.map((patient) => (
-                    <PatientCard key={patient.id} patient={patient} />
-                  ))
-                )}
+                <div className="flex flex-col gap-3">
+                  {loading ? (
+                    <div className="p-8 text-center text-gray-600">Loading patients...</div>
+                  ) : error ? (
+                    <div className="p-8 text-center text-red-600">Failed to load data: {error}</div>
+                  ) : patients.length === 0 ? (
+                    <div className="p-8 text-center text-gray-600">No patients.</div>
+                  ) : (
+                    patients.map((patient) => (
+                      <PatientCard key={patient.id} patient={patient} />
+                    ))
+                  )}
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="p-6">
-              <PatientDetail patient={selectedPatient} />
-            </div>
-          )}
-        </div>
+            ) : (
+              <div className="p-6">
+                <PatientDetail patient={selectedPatient} />
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>
