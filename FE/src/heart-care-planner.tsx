@@ -55,30 +55,30 @@ const HeartCarePatientPlanner = () => {
     return (
       <div
         onClick={() => setSelectedPatient(patient)}
-        className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-lg cursor-pointer transition-all"
+        className="bg-white border border-gray-200 rounded-lg p-3 md:p-5 hover:shadow-lg cursor-pointer transition-all"
       >
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-xl font-bold text-gray-900">{patient.name}</h3>
-              <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${riskColors[patient.riskLevel]}`}>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 watch:text-sm">{patient.name}</h3>
+              <span className={`px-2 py-0.5 text-xs md:text-xs watch:text-[10px] font-semibold rounded-full border ${riskColors[patient.riskLevel]}`}>
                 {translateRisk(patient.riskLevel)}
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm watch:text-xs text-gray-600">
               <div><span className="font-medium">MRN:</span> {patient.mrn}</div>
               <div><span className="font-medium">Age:</span> {patient.age} yrs ({patient.gender})</div>
               <div><span className="font-medium">Room:</span> {patient.room}</div>
               <div><span className="font-medium">Admission:</span> {patient.admissionDate}</div>
             </div>
           </div>
-          <ChevronRight className="w-6 h-6 text-gray-400" />
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-400" />
         </div>
-        
+
         <div className="border-t pt-3 mt-3">
-          <p className="font-semibold text-gray-900 mb-1">Diagnosis:</p>
-          <p className="text-gray-700">{patient.diagnosis}</p>
-          <p className="text-sm text-gray-600 mt-2 italic">"{patient.chiefComplaint}"</p>
+          <p className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Diagnosis:</p>
+          <p className="text-gray-700 text-sm md:text-base">{patient.diagnosis}</p>
+          <p className="text-sm text-gray-600 mt-2 italic watch:text-xs">"{patient.chiefComplaint}"</p>
         </div>
       </div>
     );
@@ -87,52 +87,54 @@ const HeartCarePatientPlanner = () => {
   const PatientDetail = ({ patient }) => {
     return (
       <div className="space-y-6">
-        <div className="flex items-start justify-between border-b pb-4">
+        <div className="flex flex-col md:flex-row items-start justify-between border-b pb-4">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">{patient.name}</h2>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-gray-700">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2 watch:text-lg">{patient.name}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 text-gray-700 text-sm watch:text-xs">
               <div><span className="font-medium">MRN:</span> {patient.mrn}</div>
               <div><span className="font-medium">Room:</span> {patient.room}</div>
               <div><span className="font-medium">Age/Gender:</span> {patient.age} years / {patient.gender}</div>
               <div><span className="font-medium">Admission Date:</span> {patient.admissionDate}</div>
             </div>
             <div className="mt-3">
-              <p className="text-lg font-semibold text-gray-900">{patient.diagnosis}</p>
-              <p className="text-gray-600 italic mt-1">Chief Complaint: {patient.chiefComplaint}</p>
+              <p className="text-base md:text-lg font-semibold text-gray-900">{patient.diagnosis}</p>
+              <p className="text-sm text-gray-600 italic mt-1 watch:text-xs">Chief Complaint: {patient.chiefComplaint}</p>
             </div>
           </div>
-          <button
-            onClick={() => setSelectedPatient(null)}
-            className="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg font-medium"
-          >
-            ← Back to List
-          </button>
+          <div className="mt-4 md:mt-0">
+            <button
+              onClick={() => setSelectedPatient(null)}
+              className="px-3 py-1.5 watch:px-2 watch:py-1 text-blue-600 hover:bg-blue-50 rounded-lg font-medium text-sm"
+            >
+              ← Back to List
+            </button>
+          </div>
         </div>
 
         {/* Clinical Parameters */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {patient.ejectionFraction && (
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-blue-700 font-medium mb-1">Ejection Fraction</p>
-              <p className="text-2xl font-bold text-blue-900">{patient.ejectionFraction}%</p>
+              <p className="text-xs md:text-sm text-blue-700 font-medium mb-1">Ejection Fraction</p>
+              <p className="text-xl md:text-2xl font-bold text-blue-900">{patient.ejectionFraction}%</p>
             </div>
           )}
           {patient.nyhaClass && (
             <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-              <p className="text-sm text-purple-700 font-medium mb-1">NYHA Class</p>
-              <p className="text-2xl font-bold text-purple-900">{patient.nyhaClass}</p>
+              <p className="text-xs md:text-sm text-purple-700 font-medium mb-1">NYHA Class</p>
+              <p className="text-xl md:text-2xl font-bold text-purple-900">{patient.nyhaClass}</p>
             </div>
           )}
           {patient.heartRate && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-              <p className="text-sm text-red-700 font-medium mb-1">Heart Rate</p>
-              <p className="text-lg font-bold text-red-900">{patient.heartRate}</p>
+              <p className="text-xs md:text-sm text-red-700 font-medium mb-1">Heart Rate</p>
+              <p className="text-lg md:text-xl font-bold text-red-900">{patient.heartRate}</p>
             </div>
           )}
           {patient.chadScore && (
             <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
-              <p className="text-sm text-orange-700 font-medium mb-1">CHA₂DS₂-VASc</p>
-              <p className="text-2xl font-bold text-orange-900">{patient.chadScore}</p>
+              <p className="text-xs md:text-sm text-orange-700 font-medium mb-1">CHA₂DS₂-VASc</p>
+              <p className="text-xl md:text-2xl font-bold text-orange-900">{patient.chadScore}</p>
             </div>
           )}
         </div>
@@ -143,10 +145,10 @@ const HeartCarePatientPlanner = () => {
             <Activity className="w-5 h-5" />
             Latest Laboratory Results
           </h3>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {Object.entries(patient.labs).map(([key, value]) => (
               <div key={key} className="bg-white p-3 rounded border border-gray-200">
-                <p className="text-xs text-gray-600 uppercase mb-1">
+                <p className="text-[10px] md:text-xs text-gray-600 uppercase mb-1">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
                 </p>
                 <p className="font-semibold text-gray-900">{value}</p>
@@ -165,13 +167,13 @@ const HeartCarePatientPlanner = () => {
             {patient.medications.map((med, index) => (
               <div key={index} className="bg-white rounded-lg p-4 border border-purple-100">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-bold text-gray-900">{med.name}</h4>
-                  <span className="text-sm bg-purple-100 text-purple-800 px-2 py-1 rounded">
+                  <h4 className="font-bold text-gray-900 text-sm md:text-base">{med.name}</h4>
+                  <span className="text-xs md:text-sm bg-purple-100 text-purple-800 px-2 py-1 rounded">
                     {med.dose}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 mb-1">Frequency: {med.frequency}</p>
-                <p className="text-sm text-gray-700 italic">{med.purpose}</p>
+                <p className="text-xs md:text-sm text-gray-600 mb-1">Frequency: {med.frequency}</p>
+                <p className="text-xs md:text-sm text-gray-700 italic">{med.purpose}</p>
               </div>
             ))}
           </div>
@@ -262,16 +264,16 @@ const HeartCarePatientPlanner = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-6 watch:p-2">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="p-3 bg-red-600 rounded-lg shadow-lg">
-              <Heart className="w-10 h-10 text-white" />
+            <div className="p-2 md:p-3 bg-red-600 rounded-lg shadow-lg">
+              <Heart className="w-8 h-8 md:w-10 md:h-10 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-gray-900">Cardiovascular Patient Care Plan</h1>
-              <p className="text-gray-600 text-lg">Clinician Dashboard - Inpatient Management</p>
+              <h1 className="text-2xl md:text-4xl font-bold text-gray-900 watch:text-base">Cardiovascular Patient Care Plan</h1>
+              <p className="text-gray-600 text-sm md:text-lg watch:text-xs">Clinician Dashboard - Inpatient Management</p>
             </div>
           </div>
         </header>
@@ -283,7 +285,7 @@ const HeartCarePatientPlanner = () => {
               <li key={`${item}-${idx}`}>
                 <button
                   onClick={() => setActiveMenu(item)}
-                  className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                  className={`px-3 py-2 watch:px-2 watch:py-1 rounded-md font-medium transition-colors ${
                     activeMenu === item ? 'bg-blue-600 text-white' : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
@@ -301,19 +303,19 @@ const HeartCarePatientPlanner = () => {
         ) : (
         <div className="bg-white rounded-xl shadow-xl overflow-hidden">
           {!selectedPatient ? (
-            <div className="p-6">
+            <div className="p-4 md:p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Active Patients</h2>
-                  <p className="text-gray-600">Total: {patients.length} patients in care</p>
+                  <h2 className="text-lg md:text-2xl font-bold text-gray-900">Active Patients</h2>
+                  <p className="text-gray-600 text-sm">Total: {patients.length} patients in care</p>
                 </div>
-                <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-lg">
-                  <Clock className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-medium text-blue-900">Last Updated: {new Date().toLocaleDateString('en-US')}</span>
+                <div className="flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-lg">
+                  <Clock className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                  <span className="text-xs md:text-sm font-medium text-blue-900">Last Updated: {new Date().toLocaleDateString('en-US')}</span>
                 </div>
               </div>
-              
-              <div className="grid gap-4">
+
+              <div className="flex flex-col gap-3">
                 {loading ? (
                   <div className="p-8 text-center text-gray-600">Loading patients...</div>
                 ) : error ? (

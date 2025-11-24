@@ -10,3 +10,14 @@ body {
   @apply bg-slate-50;
   font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
+
+/* Adjust base typography and spacing for very small screens (smartwatches) */
+@layer base {
+  @screen watch {
+    html { font-size: 13px; }
+    h1 { @apply text-base; }
+    h2 { @apply text-sm; }
+    h3 { @apply text-sm; }
+    p  { @apply text-xs; }
+  }
+}
