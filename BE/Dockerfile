@@ -1,18 +1,19 @@
 # BE Dockerfile: build context will be project root so we can copy DATA
 FROM node:18-alpine
 
-WORKDIR /app
+# Keep BE files under /app/BE so __dirname in server.js points to /app/BE
+WORKDIR /app/BE
 
-# Copy package files from BE folder
+# Copy BE package files and install production deps
 COPY BE/package*.json ./
-
-# Install production dependencies
 RUN npm ci --only=production
 
-# Copy server and data
-COPY BE/server.js ./
-COPY DATA ./DATA
+# Copy BE source files into /app/BE
+COPY BE/ ./
 
-EXPOSE 4000
+# Copy DATA to /app/DATA so server can access it via ../DATA from /app/BE
+COPY DATA /app/DATA
+
+EXPOSE 3333
 
 CMD ["node", "server.js"]
