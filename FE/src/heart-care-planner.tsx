@@ -264,7 +264,7 @@ const HeartCarePatientPlanner = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-6 watch:p-2">
+    <div id="daftar-pasien" className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-6 watch:p-2">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-2">
