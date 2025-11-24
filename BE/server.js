@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 // Load data.json at startup
 let data = [];
-const dataPath = path.join(__dirname, '../DATA/data.json');
+const dataPath = path.join(__dirname, 'data.json');
 try {
   const raw = fs.readFileSync(dataPath, 'utf8');
   data = JSON.parse(raw);

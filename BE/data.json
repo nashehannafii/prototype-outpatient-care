@@ -1,0 +1,381 @@
+[
+    {
+        "id": 1,
+        "name": "Budi Santoso",
+        "age": 65,
+        "gender": "Laki-laki",
+        "mrn": "MRN-20250001",
+        "diagnosis": "Heart Failure (HFrEF)",
+        "admissionDate": "2025-11-20",
+        "room": "Ruang ICU-2",
+        "ejectionFraction": 30,
+        "nyhaClass": "III",
+        "riskLevel": "Tinggi",
+        "chiefComplaint": "Sesak napas saat aktivitas ringan, bengkak kaki",
+        "medications": [
+            {
+                "name": "Bisoprolol",
+                "dose": "5 mg",
+                "frequency": "1x sehari",
+                "purpose": "Beta blocker untuk mengurangi beban jantung"
+            },
+            {
+                "name": "Ramipril",
+                "dose": "5 mg",
+                "frequency": "1x sehari",
+                "purpose": "ACE inhibitor untuk melindungi jantung"
+            },
+            {
+                "name": "Furosemide",
+                "dose": "40 mg",
+                "frequency": "2x sehari",
+                "purpose": "Diuretik untuk mengurangi cairan"
+            },
+            {
+                "name": "Spironolactone",
+                "dose": "25 mg",
+                "frequency": "1x sehari",
+                "purpose": "Antagonis aldosteron"
+            }
+        ],
+        "carePlan": {
+            "monitoring": [
+                "Timbang berat badan setiap hari (pagi hari)",
+                "Monitor intake-output cairan ketat",
+                "Observasi tanda vital setiap 6 jam",
+                "Cek elektrolit dan fungsi ginjal setiap 3 hari",
+                "Evaluasi edema perifer daily"
+            ],
+            "dietary": [
+                "Pembatasan cairan: maksimal 1.5 liter/hari",
+                "Diet rendah garam: <2 gram sodium/hari",
+                "Tinggi protein, rendah lemak jenuh",
+                "Hindari makanan kalengan dan olahan"
+            ],
+            "activities": [
+                "Bed rest dengan posisi semi fowler",
+                "Mobilisasi bertahap sesuai toleransi",
+                "Latihan pernapasan 3x sehari",
+                "Hindari aktivitas berat"
+            ],
+            "followUp": "Evaluasi respons terapi dalam 48 jam, rencana discharge dalam 5-7 hari jika stabil",
+            "education": [
+                "Edukasi tentang tanda-tanda perburukan (berat naik >1kg/hari)",
+                "Pentingnya kepatuhan minum obat",
+                "Teknik monitoring mandiri di rumah",
+                "Kapan harus segera ke RS"
+            ]
+        },
+        "labs": {
+            "bnp": "850 pg/mL",
+            "creatinine": "1.4 mg/dL",
+            "potassium": "4.2 mEq/L",
+            "sodium": "136 mEq/L"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Siti Nurhaliza",
+        "age": 58,
+        "gender": "Perempuan",
+        "mrn": "MRN-20250002",
+        "diagnosis": "Atrial Fibrillation + Stroke Risk",
+        "admissionDate": "2025-11-21",
+        "room": "Ruang Kardio-5",
+        "heartRate": "110-140 bpm irregular",
+        "chadScore": 4,
+        "riskLevel": "Sedang-Tinggi",
+        "chiefComplaint": "Jantung berdebar-debar, pusing, lemas",
+        "medications": [
+            {
+                "name": "Apixaban",
+                "dose": "5 mg",
+                "frequency": "2x sehari",
+                "purpose": "Antikoagulan untuk mencegah stroke"
+            },
+            {
+                "name": "Bisoprolol",
+                "dose": "2.5 mg",
+                "frequency": "2x sehari",
+                "purpose": "Kontrol laju jantung"
+            },
+            {
+                "name": "Digoxin",
+                "dose": "0.125 mg",
+                "frequency": "1x sehari",
+                "purpose": "Kontrol laju ventrikel"
+            }
+        ],
+        "carePlan": {
+            "monitoring": [
+                "Monitor EKG kontinyu",
+                "Cek vital signs setiap 4 jam",
+                "Observasi tanda-tanda perdarahan",
+                "Monitor INR tidak diperlukan (pakai NOAC)",
+                "Evaluasi risiko jatuh (karena antikoagulan)"
+            ],
+            "dietary": [
+                "Diet jantung sehat",
+                "Batasi kafein dan alkohol",
+                "Cukup hidrasi",
+                "Konsisten dengan asupan vitamin K"
+            ],
+            "activities": [
+                "Aktivitas ringan sesuai toleransi",
+                "Hindari olahraga berat",
+                "Teknik relaksasi untuk manajemen stres",
+                "Edukasi fall prevention"
+            ],
+            "followUp": "Follow up 1 minggu post discharge untuk evaluasi kontrol rate, kemudian monthly",
+            "education": [
+                "Pentingnya kepatuhan antikoagulan",
+                "Tanda-tanda perdarahan yang perlu diperhatikan",
+                "Cara mengukur nadi sendiri",
+                "Hindari obat-obatan yang berinteraksi"
+            ]
+        },
+        "labs": {
+            "hemoglobin": "12.5 g/dL",
+            "inr": "Tidak diperlukan (NOAC)",
+            "creatinine": "0.9 mg/dL",
+            "tsh": "Normal"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Agus Wijaya",
+        "age": 72,
+        "gender": "Laki-laki",
+        "mrn": "MRN-20250003",
+        "diagnosis": "STEMI Inferior Post PCI",
+        "admissionDate": "2025-11-19",
+        "room": "Ruang ICCU-1",
+        "intervention": "PCI RCA dengan stent DES",
+        "dayPostPCI": 3,
+        "riskLevel": "Tinggi",
+        "chiefComplaint": "Post acute MI, nyeri dada sudah berkurang",
+        "medications": [
+            {
+                "name": "Aspirin",
+                "dose": "100 mg",
+                "frequency": "1x sehari",
+                "purpose": "Antiplatelet primer"
+            },
+            {
+                "name": "Ticagrelor",
+                "dose": "90 mg",
+                "frequency": "2x sehari",
+                "purpose": "Antiplatelet DAPT"
+            },
+            {
+                "name": "Atorvastatin",
+                "dose": "80 mg",
+                "frequency": "1x malam",
+                "purpose": "Statin dosis tinggi"
+            },
+            {
+                "name": "Bisoprolol",
+                "dose": "2.5 mg",
+                "frequency": "1x sehari",
+                "purpose": "Beta blocker post MI"
+            },
+            {
+                "name": "Ramipril",
+                "dose": "2.5 mg",
+                "frequency": "1x sehari",
+                "purpose": "ACE inhibitor post MI"
+            }
+        ],
+        "carePlan": {
+            "monitoring": [
+                "Monitor telemetri 24/7",
+                "Cek troponin serial (H+24, H+48)",
+                "Observasi komplikasi: aritmia, heart failure, shock",
+                "Monitor tanda perdarahan (DAPT)",
+                "Evaluasi nyeri dada berulang"
+            ],
+            "dietary": [
+                "Diet jantung fase akut",
+                "Rendah lemak, rendah kolesterol",
+                "Tinggi serat dan antioksidan",
+                "Porsi kecil, sering (6x sehari)"
+            ],
+            "activities": [
+                "Hari 1-2: Bed rest total",
+                "Hari 3-4: Mobilisasi bertahap (duduk di tepi tempat tidur)",
+                "Hari 5-7: Jalan ringan di ruangan",
+                "Program cardiac rehab fase I mulai hari ke-3"
+            ],
+            "followUp": "Discharge planning hari ke-5 jika stabil, cardiac rehab outpatient, kontrol 1 minggu",
+            "education": [
+                "Edukasi tentang serangan jantung dan pencegahan",
+                "Pentingnya DAPT 12 bulan penuh",
+                "Modifikasi faktor risiko (berhenti merokok, diet, exercise)",
+                "Tanda-tanda serangan berulang",
+                "Program rehabilitasi jantung"
+            ]
+        },
+        "labs": {
+            "troponin": "15.2 ng/mL (penurunan dari 45)",
+            "creatinine": "1.1 mg/dL",
+            "ldlCholesterol": "165 mg/dL",
+            "hemoglobin": "13.2 g/dL"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Dewi Lestari",
+        "age": 55,
+        "gender": "Perempuan",
+        "mrn": "MRN-20250004",
+        "diagnosis": "Unstable Angina + Hypertension",
+        "admissionDate": "2025-11-22",
+        "room": "Ruang Kardio-3",
+        "riskLevel": "Sedang",
+        "chiefComplaint": "Nyeri dada saat istirahat, keringat dingin",
+        "medications": [
+            {
+                "name": "Aspirin",
+                "dose": "100 mg",
+                "frequency": "1x sehari",
+                "purpose": "Antiplatelet"
+            },
+            {
+                "name": "Clopidogrel",
+                "dose": "75 mg",
+                "frequency": "1x sehari",
+                "purpose": "Antiplatelet"
+            },
+            {
+                "name": "ISDN",
+                "dose": "5 mg",
+                "frequency": "3x sehari",
+                "purpose": "Nitrat untuk angina"
+            },
+            {
+                "name": "Amlodipine",
+                "dose": "10 mg",
+                "frequency": "1x sehari",
+                "purpose": "Kontrol tekanan darah"
+            },
+            {
+                "name": "Atorvastatin",
+                "dose": "40 mg",
+                "frequency": "1x malam",
+                "purpose": "Statin"
+            }
+        ],
+        "carePlan": {
+            "monitoring": [
+                "Observasi nyeri dada (frekuensi, durasi, trigger)",
+                "Monitor tekanan darah ketat setiap 4 jam",
+                "Serial EKG jika ada keluhan",
+                "Troponin serial untuk rule out NSTEMI",
+                "Persiapan untuk kemungkinan angiografi"
+            ],
+            "dietary": [
+                "Diet jantung sehat",
+                "Rendah garam untuk kontrol TD",
+                "Hindari makanan pemicu (kopi, makanan pedas)",
+                "Porsi kecil untuk menghindari fullness"
+            ],
+            "activities": [
+                "Bed rest selama fase akut",
+                "Mobilisasi bertahap jika bebas nyeri 24 jam",
+                "Hindari aktivitas yang memicu angina",
+                "Stress management"
+            ],
+            "followUp": "Evaluasi untuk angiografi dalam 24-48 jam, discharge setelah stratifikasi risiko lengkap",
+            "education": [
+                "Pengenalan gejala angina dan kapan harus ke RS",
+                "Penggunaan nitrat sublingual saat serangan",
+                "Modifikasi faktor risiko kardiovaskular",
+                "Pentingnya kontrol tekanan darah",
+                "Manajemen stres"
+            ]
+        },
+        "labs": {
+            "troponin": "0.02 ng/mL (normal)",
+            "ldl": "180 mg/dL",
+            "bloodPressure": "165/95 mmHg",
+            "glucose": "145 mg/dL"
+        }
+    },
+    {
+        "id": 5,
+        "name": "Hendra Gunawan",
+        "age": 68,
+        "gender": "Laki-laki",
+        "mrn": "MRN-20250005",
+        "diagnosis": "Decompensated Heart Failure + CKD Stage 3",
+        "admissionDate": "2025-11-21",
+        "room": "Ruang Kardio-7",
+        "ejectionFraction": 35,
+        "nyhaClass": "IV",
+        "riskLevel": "Sangat Tinggi",
+        "chiefComplaint": "Sesak napas berat bahkan saat istirahat, edema anasarka",
+        "medications": [
+            {
+                "name": "Furosemide IV",
+                "dose": "40 mg",
+                "frequency": "2x sehari",
+                "purpose": "Diuretik kuat untuk overload"
+            },
+            {
+                "name": "Carvedilol",
+                "dose": "3.125 mg",
+                "frequency": "2x sehari",
+                "purpose": "Beta blocker (start low dose)"
+            },
+            {
+                "name": "Candesartan",
+                "dose": "8 mg",
+                "frequency": "1x sehari",
+                "purpose": "ARB untuk gagal jantung"
+            },
+            {
+                "name": "Spironolactone",
+                "dose": "25 mg",
+                "frequency": "1x sehari",
+                "purpose": "MRA"
+            }
+        ],
+        "carePlan": {
+            "monitoring": [
+                "Strict intake-output monitoring",
+                "Daily weight (target: turun 0.5-1 kg/hari)",
+                "Monitor fungsi ginjal dan elektrolit harian",
+                "Observasi respiratory distress",
+                "Oksigen support sesuai kebutuhan (target SpO2 >92%)",
+                "BNP monitoring untuk evaluasi respons terapi"
+            ],
+            "dietary": [
+                "Restriksi cairan ketat: 800-1000 mL/hari",
+                "Diet rendah garam ekstrim: <1.5 gram/hari",
+                "Tinggi protein (jika fungsi ginjal memungkinkan)",
+                "Pantau balance cairan ketat"
+            ],
+            "activities": [
+                "Bed rest total dengan posisi semi fowler/fowler",
+                "Latihan ROM pasif untuk mencegah DVT",
+                "Penggunaan compression stockings",
+                "Mobilisasi sangat bertahap setelah dekongesti"
+            ],
+            "followUp": "Hospitalisasi 7-10 hari, kemungkinan perlu ultrafiltration, kontrol ketat post discharge",
+            "education": [
+                "Pentingnya kepatuhan diet dan cairan",
+                "Monitoring berat badan mandiri",
+                "Tanda-tanda dekompensasi berulang",
+                "Edukasi keluarga untuk home care support",
+                "Diskusi prognosis dan advance care planning"
+            ]
+        },
+        "labs": {
+            "bnp": "1250 pg/mL",
+            "creatinine": "2.1 mg/dL",
+            "egfr": "35 mL/min",
+            "potassium": "5.2 mEq/L",
+            "hemoglobin": "10.8 g/dL"
+        }
+    }
+]
