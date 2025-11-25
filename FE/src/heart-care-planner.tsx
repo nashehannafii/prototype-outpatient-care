@@ -300,7 +300,7 @@ const HeartCarePatientPlanner = () => {
             <p className="text-gray-400">Empty menu</p>
           </div>
         ) : (
-          <div  id="list-pasien" className="bg-white rounded-xl shadow-xl overflow-hidden">
+          <div  id="list-pasien" className="bg-white rounded-xl shadow-xl overflow-hidden list-pasien">
             {!selectedPatient ? (
               <div className="p-4 md:p-6">
                 <div className="flex items-center justify-between mb-6">
