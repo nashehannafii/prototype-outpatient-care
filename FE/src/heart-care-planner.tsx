@@ -14,8 +14,7 @@ const HeartCarePatientPlanner = () => {
     const fetchPatients = async () => {
       try {
         setLoading(true);
-        const MAIN_URL = (import.meta as any)?.env?.VITE_MAIN_URL || 'http://localhost:4000';
-        const res = await fetch(`${MAIN_URL}/data`);
+        const res = await fetch('http://103.195.19.140:4000/data');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (mounted) setPatients(Array.isArray(data) ? data : []);
