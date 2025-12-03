@@ -19,6 +19,8 @@ services:
     image: prototype-fe:latest
     ports:
       - "5173:80"
+    # depends_on:
+    #   - be
     environment:
       - VITE_MAIN_URL=http://54.254.136.203:4000
     restart: unless-stopped
