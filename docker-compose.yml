@@ -16,9 +16,13 @@ services:
     build:
       context: .
       dockerfile: FE/Dockerfile
+      args:
+        VITE_MAIN_URL: "http://54.254.136.203:4000"
     image: prototype-fe:latest
     ports:
       - "5173:80"
     depends_on:
       - be
+    environment:
+      - VITE_MAIN_URL=http://be:4000
     restart: unless-stopped

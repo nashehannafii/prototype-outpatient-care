@@ -8,6 +8,8 @@ RUN npm ci
 
 # Copy full FE app and build
 COPY FE/ ./
+ARG VITE_MAIN_URL
+ENV VITE_MAIN_URL=${VITE_MAIN_URL}
 RUN npm run build
 
 # Production image
